@@ -1,0 +1,14 @@
+GET http://localhost:3000/users/6159b7db64a0a91b45b49ceb
+
+###
+
+POST http://localhost:3000/localhost:3000
+Content-Type: application/json
+
+{
+    "name": "Velin",
+    "hash": "password"
+}
+
+### 
+GET http://localhost:3000/user/13423/choose_habits
