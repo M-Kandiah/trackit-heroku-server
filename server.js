@@ -20,13 +20,9 @@ server.set("view engine", 'ejs');
 const userRoutes = require('./controllers/userRoutes')
 server.use('/user', userRoutes)
 
-//Serve Client Folder to Localhost
-server.use(express.static('../client'))
-
 // Root route
 server.get('/', (req, res) => {
-    let pathLogin = path.join(__dirname, '../client/html/login.html');
-    res.sendFile(pathLogin);
+    res.send('Welcome to the API!')
 })
 
 //login GET route
@@ -61,15 +57,15 @@ server.post('/login', async (req, res) => {
     }
 })
 
-server.get('/user', async (req, res) => { // after running authenticateToken, req.user is the user from server.post
-    // once token verified, how do we proceed ?
-    try {
-        const user = await User.findByEmail(req.body.email)
-        res.status(200).json(user);
-    } catch (error) {
-        res.status(404).send(error);
-    }
-})
+// server.get('/user', async (req, res) => { // after running authenticateToken, req.user is the user from server.post
+//     // once token verified, how do we proceed ?
+//     try {
+//         const user = await User.findByEmail(req.body.email)
+//         res.status(200).json(user);
+//     } catch (error) {
+//         res.status(404).send(error);
+//     }
+// })
 
 // registration route
 server.post('/register', async (req, res) => {
