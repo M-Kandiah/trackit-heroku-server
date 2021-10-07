@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const joi = require('joi');
 const User = require('../models/user')
-
+const cors = require('cors')
 const authenticateToken = require('../middleware/tokenAuth')
 
+router.use(cors())
 // user index route
 
 router.get('/', authenticateToken, async (req, res) => {
