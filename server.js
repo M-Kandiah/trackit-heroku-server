@@ -101,4 +101,44 @@ server.post('/register', async (req, res) => {
     }
 })
 
+// QUOTES REQUEST
+server.get('/quotes', (req, res) => {
+    let quotes = [
+        {
+            "q": "I didn't get there by wishing for it or hoping for it, but by working for it.",
+            "a": "Estee Lauder",
+        },
+        {
+            "q": "Before you embark on a journey of revenge, dig two graves. ",
+            "a": "Confucius ",
+        },
+        {
+            "q": "Forget yesterday - it has already forgotten you. Don't sweat tomorrow - you haven't even met. Instead, open your eyes and your heart to a truly precious gift – today.",
+            "a": "Steve Maraboli",
+        },
+        {
+            "q": "Winners never quit and quitters never win.",
+            "a": "Vince Lombardi",
+        },
+        {
+            "q": "The face is the mirror of the mind, and eyes without speaking confess the secrets of the heart. ",
+            "a": "St. Jerome",
+        },
+        {
+            "q": "Success is never final; failure is never fatal.",
+            "a": "Conrad Hilton",
+        },
+        {
+            "q": "Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better. ",
+            "a": "Samuel Beckett",
+        },
+        {
+            "q": "One of the most difficult things is not to change society - but to change yourself.",
+            "a": "Nelson Mandela",
+        }
+    ]
+    res.send(quotes);
+})
+
 module.exports = server
+
